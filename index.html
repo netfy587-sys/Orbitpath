@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orbitpath – Outdoors, fitness, mindset and learning guides</title>
+<meta name="description" content="Orbitpath publishes original guides on outdoor adventures, everyday fitness, mindset and learning, written to help you find your next step.">
+<link rel="canonical" href="https://www.yourdomain.com/">
+<meta property="og:title" content="Orbitpath">
+<meta property="og:description" content="Original guides on outdoors, fitness, mindset and learning.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- GOOGLE ADSENSE: paste your own code here after approval.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<style>
+:root{
+  --bg:#eef5f1; --ink:#12261e; --muted:#51675d; --card:#ffffff; --line:#d3e2da;
+  --green:#12805c; --deep:#0c3b2c; --deep-ink:#eafaf2; --orange:#e86a17; --tint:#dcefe5; --sun:#ffd29a;
+  --head:'Outfit','Trebuchet MS',Arial,sans-serif;
+  --body:'Lora',Georgia,'Times New Roman',serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#08140f; --ink:#e6f5ec; --muted:#9db8aa; --card:#102219; --line:#1f3b2d;
+    --green:#4fd1a0; --deep:#040b08; --deep-ink:#eafaf2; --orange:#ff9a52; --tint:#16301f; --sun:#ffd29a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#08140f; --ink:#e6f5ec; --muted:#9db8aa; --card:#102219; --line:#1f3b2d;
+  --green:#4fd1a0; --deep:#040b08; --deep-ink:#eafaf2; --orange:#ff9a52; --tint:#16301f; --sun:#ffd29a;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.06rem;line-height:1.72}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0 0 .55em;font-weight:700}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+
+/* Header (not sticky) */
+.top{border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:.9rem;padding-bottom:.9rem}
+.brand{display:flex;align-items:center;gap:.5rem;color:var(--ink);text-decoration:none;font-family:var(--head);font-weight:800;font-size:1.5rem}
+.brand svg{width:36px;height:36px}
+.top nav ul{display:flex;flex-wrap:wrap;gap:.3rem .5rem;list-style:none;margin:0;padding:0;font-family:var(--head);font-weight:500;font-size:.93rem}
+.top nav a{display:block;color:var(--ink);text-decoration:none;padding:.35rem .8rem;border-radius:8px}
+.top nav a:hover{background:var(--tint)}
+.top nav a.hl{background:var(--orange);color:#fff}
+
+/* Hero with trail */
+.hero{padding:3rem 0 1rem}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.8rem);font-weight:800;max-width:17ch}
+.hero p{max-width:56ch;color:var(--muted);margin:0 0 1.4rem}
+.btn{display:inline-block;background:var(--green);color:#fff;font-family:var(--head);font-weight:700;text-decoration:none;padding:.8rem 1.5rem;border-radius:10px}
+:root[data-theme="dark"] .btn,
+:root:not([data-theme="light"]) .btn{color:#06130d}
+.btn:hover{filter:brightness(1.08)}
+.trail{width:100%;height:auto;display:block;margin-top:1.5rem}
+.trail .path{stroke:var(--green);fill:none}
+.trail .stop{fill:var(--card);stroke:var(--orange);stroke-width:4}
+.trail text{fill:var(--ink);font-family:var(--head);font-weight:700;font-size:15px}
+@media (prefers-reduced-motion:no-preference){.trail .path{stroke-dasharray:10 12;animation:dash 14s linear infinite}}
+@keyframes dash{to{stroke-dashoffset:-220}}
+
+.sec-title{font-size:1.5rem;margin:2.6rem 0 1.1rem}
+
+/* Path cards */
+.paths{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.2rem}
+.pcard .dot{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:800;color:#fff;margin-bottom:.8rem}
+.pcard:nth-child(1) .dot{background:var(--green)} .pcard:nth-child(2) .dot{background:var(--orange)} .pcard:nth-child(3) .dot{background:#3b7bd8} .pcard:nth-child(4) .dot{background:#8a5bd6}
+.pcard h3{font-size:1.1rem;margin-bottom:.3rem}
+.pcard p{margin:0;font-size:.95rem;color:var(--muted)}
+
+/* Ads */
+.ad-slot{margin:1.8rem 0;text-align:center}
+.ad-slot small{display:block;font-family:var(--head);font-size:.72rem;color:var(--muted);margin-bottom:.3rem}
+.ad-box{min-height:100px;border:1px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;font-family:var(--head)}
+
+/* Newest list as rows */
+.rows{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 130px 90px;gap:1rem;align-items:center;padding:1.1rem 1.4rem;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row h3{font-size:1.1rem;margin:0 0 .2rem}
+.row h3 a{color:var(--ink);text-decoration:none}
+.row h3 a:hover{color:var(--green);text-decoration:underline}
+.row p{margin:0;font-size:.95rem;color:var(--muted)}
+.row .cat{font-family:var(--head);font-weight:700;font-size:.82rem;background:var(--tint);color:var(--green);border-radius:999px;padding:.2rem .7rem;text-align:center}
+.row .time{font-family:var(--head);font-size:.85rem;color:var(--muted);text-align:right}
+
+/* Spotlight */
+.spot{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.big{border-radius:20px;padding:2rem;color:#fff;min-height:240px;display:flex;flex-direction:column;justify-content:flex-end}
+.big.a{background:linear-gradient(160deg,#0c5c43,#12805c)}
+.big.b{background:linear-gradient(160deg,#a94410,#e86a17)}
+.big h3{font-size:1.5rem}
+.big h3 a{color:#fff;text-decoration:none}
+.big h3 a:hover{text-decoration:underline}
+.big p{margin:0 0 .8rem;color:#fff;opacity:.92}
+.big .more{color:#fff;font-family:var(--head);font-weight:700}
+.kicker{font-family:var(--head);font-weight:700;font-size:.82rem;opacity:.9;margin-bottom:.4rem}
+
+/* About / disclaimer */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;margin-top:2.6rem}
+.about h2{font-size:1.4rem}
+.disclaimer{margin-top:2rem;background:var(--card);border:1px solid var(--line);border-top:6px solid var(--orange);border-radius:14px;padding:1.6rem 1.8rem}
+.disclaimer h2{font-size:1.4rem}
+.dcols{columns:2;column-gap:2.2rem}
+.dcols h3{font-size:.95rem;margin:.9rem 0 .15rem;break-after:avoid}
+.dcols h3:first-child{margin-top:0}
+.dcols p{margin:.1rem 0 .5rem;font-size:1rem}
+
+/* Footer */
+footer{background:var(--deep);color:var(--deep-ink);margin-top:3rem;padding:2.4rem 0 2.6rem;font-size:1rem}
+footer a{color:var(--deep-ink)}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:1.6rem}
+footer h3{font-size:.95rem}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:.3rem 0}
+.copy{margin-top:1.6rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.16);color:#9fc7b3;font-size:.9rem}
+
+/* Consent */
+#consent{position:fixed;left:1rem;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));max-width:620px;margin:0 auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.25);display:none;z-index:30;font-size:.95rem;line-height:1.5}
+#consent.show{display:block}
+#consent button{margin-top:.7rem;border:0;cursor:pointer;font-size:.92rem}
+
+@media (max-width:900px){
+  .paths{grid-template-columns:1fr 1fr}
+  .spot,.about,.fgrid{grid-template-columns:1fr}
+  .dcols{columns:1}
+}
+@media (max-width:620px){
+  .row{grid-template-columns:1fr;gap:.4rem}
+  .row .time{text-align:left}
+  .row .cat{width:fit-content}
+  .paths{grid-template-columns:1fr}
+  .trail text{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="orbitpath.html" aria-label="Orbitpath home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="none" stroke="#12805c" stroke-width="3" stroke-dasharray="5 4"/><circle cx="20" cy="20" r="5" fill="#12805c"/><circle cx="34.500" cy="14" r="4" fill="#e86a17"/></svg>
+      Orbitpath
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="orbitpath.html">Home</a></li>
+        <li><a href="#newest">Articles</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a class="hl" href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Find your path, one step at a time.</h1>
+    <p>Orbitpath shares original guides on outdoor adventures, everyday fitness, mindset and learning. Pick a direction, read a guide and take the next small step.</p>
+    <a class="btn" href="#newest">Browse the guides</a>
+
+    <svg class="trail" viewBox="0 0 1000 150" role="img" aria-label="A winding trail connecting four stops: Outdoors, Fitness, Mindset, Learning">
+      <path class="path" stroke-width="5" stroke-linecap="round" d="M60 100C160 20 230 20 330 90S500 150 590 80 760 20 940 90"/>
+      <circle class="stop" cx="60" cy="100" r="13"/><text x="30" y="140">Outdoors</text>
+      <circle class="stop" cx="330" cy="90" r="13"/><text x="305" y="130">Fitness</text>
+      <circle class="stop" cx="590" cy="80" r="13"/><text x="562" y="120">Mindset</text>
+      <circle class="stop" cx="940" cy="90" r="13"/><text x="890" y="130">Learning</text>
+    </svg>
+  </section>
+
+  <h2 class="sec-title">Choose your path</h2>
+  <div class="paths">
+    <div class="pcard"><div class="dot" aria-hidden="true">O</div><h3>Outdoors</h3><p>Trail basics, packing lists and gentle first adventures.</p></div>
+    <div class="pcard"><div class="dot" aria-hidden="true">F</div><h3>Fitness</h3><p>Simple routines you can follow at home or in the park.</p></div>
+    <div class="pcard"><div class="dot" aria-hidden="true">M</div><h3>Mindset</h3><p>Habits for focus, calm and staying motivated.</p></div>
+    <div class="pcard"><div class="dot" aria-hidden="true">L</div><h3>Learning</h3><p>Practical ways to pick up new skills and keep them.</p></div>
+  </div>
+
+  <!-- Ad slot 1 -->
+  <div class="ad-slot" aria-label="Advertisement">
+    <small>Advertisement</small>
+    <div class="ad-box">Ad space</div>
+  </div>
+
+  <h2 class="sec-title" id="newest" style="margin-top:1rem">Newest guides</h2>
+  <div class="rows">
+    <article class="row">
+      <div><h3><a href="#">A first-timer’s guide to a safe day hike</a></h3><p>What to pack, how to read a trail sign and when to turn back.</p></div>
+      <span class="cat">Outdoors</span><span class="time">9 min</span>
+    </article>
+    <article class="row">
+      <div><h3><a href="#">A twenty-minute home workout with no equipment</a></h3><p>Five easy movements, with options for beginners and for more experience.</p></div>
+      <span class="cat">Fitness</span><span class="time">6 min</span>
+    </article>
+    <article class="row">
+      <div><h3><a href="#">How to build a morning routine you will actually keep</a></h3><p>Start with one small action and let the habit grow naturally.</p></div>
+      <span class="cat">Mindset</span><span class="time">7 min</span>
+    </article>
+    <article class="row">
+      <div><h3><a href="#">The simple way to learn anything: a four-step practice plan</a></h3><p>Set a clear goal, practise in short sessions, get feedback and review.</p></div>
+      <span class="cat">Learning</span><span class="time">8 min</span>
+    </article>
+  </div>
+
+  <!-- Ad slot 2 -->
+  <div class="ad-slot" aria-label="Advertisement">
+    <small>Advertisement</small>
+    <div class="ad-box">Ad space</div>
+  </div>
+
+  <h2 class="sec-title" style="margin-top:1rem">Spotlight</h2>
+  <div class="spot">
+    <article class="big a">
+      <span class="kicker">Outdoors</span>
+      <h3><a href="#">Camping for beginners: ten things people forget to pack</a></h3>
+      <p>From a spare light source to a simple first-aid kit, a short checklist that makes your first night easier.</p>
+      <a class="more" href="#">Read the guide</a>
+    </article>
+    <article class="big b">
+      <span class="kicker">Mindset</span>
+      <h3><a href="#">Beating procrastination: why starting small works</a></h3>
+      <p>Two-minute starts, clear next actions and kind self-talk. A gentle approach to getting things done.</p>
+      <a class="more" href="#">Read the guide</a>
+    </article>
+  </div>
+
+  <div class="ad-slot" aria-label="Advertisement">
+    <small>Advertisement</small>
+    <div class="ad-box">Ad space</div>
+  </div>
+
+  <section class="about" id="about">
+    <div>
+      <h2>About Orbitpath</h2>
+      <p>Orbitpath is an independent blog for people who want to explore more, move more and learn more. Our team writes every article from scratch, checks facts against reliable sources and updates guides when information changes.</p>
+    </div>
+    <div>
+      <h2>Our promise</h2>
+      <p>We keep our guides free by showing advertising. Ads never decide what we write. If you spot a mistake or have an idea, write to us at <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a>.</p>
+    </div>
+  </section>
+
+  <section class="disclaimer" id="disclaimer" role="note">
+    <h2>Disclaimer</h2>
+    <div class="dcols">
+      <h3>General information only</h3>
+      <p>Content on Orbitpath is provided for general information and education. We work to keep it accurate and current, but we cannot guarantee it is complete or error-free.</p>
+      <h3>Health, fitness and outdoor safety</h3>
+      <p>Our articles are not medical or professional advice. Check with a doctor before starting any exercise programme, and use your own judgement, proper equipment and local safety information before any outdoor activity. You take part at your own risk.</p>
+      <h3>Advertising and cookies</h3>
+      <p>Orbitpath shows ads served by Google AdSense and possibly other partners, who may use cookies to personalise ads based on your visits to this and other sites. See our <a href="privacy.html">Privacy Policy</a> for details. Ads are not endorsements.</p>
+      <h3>External links</h3>
+      <p>We may link to other websites and are not responsible for their content or privacy practices.</p>
+      <h3>Changes</h3>
+      <p>We may update this disclaimer at any time. By using this site you agree to our <a href="terms.html">Terms and Conditions</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>Orbitpath</h3>
+        <p>Original guides on outdoors, fitness, mindset and learning.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul><li><a href="orbitpath.html">Home</a></li><li><a href="#newest">Articles</a></li><li><a href="#about">About</a></li></ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms and Conditions</a></li><li><a href="#disclaimer">Disclaimer</a></li></ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul><li><a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></li></ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="yr">2026</span> Orbitpath. All rights reserved.</div>
+  </div>
+</footer>
+
+<div id="consent" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  We use cookies to run this site and to show ads. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.
+  <br><button class="btn" id="consent-ok" type="button">Got it</button>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var box = document.getElementById('consent'), ok = false;
+  try { ok = localStorage.getItem('orbitpath-consent') === '1'; } catch(e) {}
+  if(!ok) box.classList.add('show');
+  document.getElementById('consent-ok').addEventListener('click', function(){
+    box.classList.remove('show');
+    try { localStorage.setItem('orbitpath-consent','1'); } catch(e) {}
+  });
+})();
+</script>
+</body>
+</html>
